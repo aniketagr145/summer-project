@@ -1,0 +1,14 @@
+.navbar-brand{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  .nav-item{
+    padding: 18px;
+    /* text-align: right; */
+}
+
+
+  .nav-link{
+    font-size: 1.2rem;
+  }

@@ -3,6 +3,25 @@
 * {
     box-sizing: border-box;
 }
+.AddTitle{
+    font-family:sans-serif;
+    background: white;
+    display: flexbox;
+    flex-direction: column;
+    /* height: 50vh; */
+		/* margin-top: 20px; */
+
+        /* letter-spacing: .5px; */
+        /* margin: 20px 0 30px; */
+        /* font-size: 14px; */
+        /* font-weight: 100; */
+        /* line-height: 20px; */
+}
+.Title{
+    margin: 20px 0px 30px;
+    padding: 20px;      
+}
+.add
 
 body {
     font-family: 'Montserrat', sans-serif;
