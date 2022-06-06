@@ -8,17 +8,18 @@ function NavBar()
     return (
 <>
         {isLoggedIn?
-  <Navbar  bg="dark" variant="dark">
-    <Navbar.Brand href="#home">XYZ</Navbar.Brand>
-    <Nav className="ms-auto" > 
+  <Navbar style={{height:"80px"}} bg="dark" variant="dark">
+    <Navbar.Brand  href="#home">XYZ</Navbar.Brand>
+    <Nav className="ms-auto nav-item" > 
+    
       <Nav.Link   href="#home">Home</Nav.Link>
       <Nav.Link  href="#features">SignUp</Nav.Link>
       <Nav.Link  href="#pricing">Login</Nav.Link>
     </Nav>
   </Navbar>:
-  <Navbar  bg="dark" variant="dark">
+  <Navbar style={{height:"80px"}} bg="dark" variant="dark">
     <Navbar.Brand href="#home">XYZ</Navbar.Brand>
-    <Nav className="ms-auto" > 
+    <Nav className="ms-auto  nav-item" > 
       <Nav.Link   href="#home">Home</Nav.Link>
       <Nav.Link  href="#features">Profile</Nav.Link>
       <Nav.Link  href="#pricing">Logout</Nav.Link>

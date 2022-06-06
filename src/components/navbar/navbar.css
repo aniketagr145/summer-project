@@ -2,13 +2,14 @@
     font-family: 'Ubuntu', sans-serif;
     font-size: 2.5rem;
     font-weight: bold;
+    margin-left: 5%;
   }
   .nav-item{
-    padding: 18px;
-    /* text-align: right; */
+  margin-right: 5%;
 }
 
 
   .nav-link{
+    margin-right: 8%;
     font-size: 1.2rem;
   }
