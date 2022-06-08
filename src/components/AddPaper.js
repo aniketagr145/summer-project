@@ -5,37 +5,44 @@ function AddPaper()
 {
 function openDialog() 
 {
-    document.getElementById('fileid').click();
+    document.getElementById('uploadVideo').click();
+}      
+function openDialogPdf() 
+{
+    document.getElementById('uploadPdf').click();
 }       
+const formStyle  = {
+    padding:"20px"
+}
     return (
-        <div className = "col-md-6 offset-md-3 mt-5">
-           <form >
-          
-         
-        </form>
-          <form> 
-          <div class="form-group">
-            <label for="exampleInputName">Title</label>
+        <div className = " container col-md-6 offset-md-3 mt-5">
+          <form style = {formStyle}> 
+          <div className="form-group h5">
+            <label htmlFor="Title">Title</label>
             <br></br>
-            <input type= "text" name="Title" class="form-control" id="exampleInputName" placeholder="Enter Title" required="required" />
+            <input type= "text" name="Title" className="form-control" id="Title" placeholder="Enter Title" required="required" />
             </div>
 
-            <div class="form-group">
-            <label for="exampleInputName">Description</label>
+            <div className="form-group h5">
+            <label htmlFor="description">Description</label>
             <br></br>
-            <input type= "text" name="Description" class="form-control" id="exampleInputName" placeholder="Enter Description" required="required" />
+            <textarea type= "text" name="Description" className="form-control" id="description" 
+             rows = "5"
+            placeholder="Enter Description" />
             </div>
-            <div class="form-group mt-3">
-            <label for="exampleInputName">Add File</label>
-           <input id='fileid' type='file' hidden/>
-           <br></br>
-            <button onClick={openDialog} >Choose File</button>
+            <div className="d-flex justify-content-center">
+            <input type = "file" id = 'uploadVideo' name = "uploadVideo"  hidden/>
+            <button  type = "file" className="  btn  btn-lg btn-primary " onClick={openDialog} >Upload Video</button>
+            <input type = "file" id = 'uploadPdf' name = "uploadPdf"  hidden/>
+            <button className="  btn btn-lg btn-primary "
+             onClick={openDialogPdf} >Upload Pdf</button>
             </div>
-          <hr/>
-           </form> 
-            {/* <Heading />
-            <InputBox />
-            <AddFile /> */}
+            <hr/>
+            <div className="d-flex justify-content-center">
+            <button className="btn btn-lg btn-dark  "
+             type = "submit" >Submit</button>
+            </div>
+           </form>  
         </div>
     );
 }
