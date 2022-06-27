@@ -1,51 +1,68 @@
-import React from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from "mdbreact";
-import '@fortawesome/fontawesome-free/css/all.min.css';
-// import 'bootstrap-css-only/css/bootstrap.min.css';
-import 'mdbreact/dist/css/mdb.css';
-const FormPage = () => {
- const    signuppageStyle = 
-    
-        {width:"30%",
-        marginTop :"30px",
-        padding : "50px"
-        }
+import React,{useState} from "react";
 
-    
-  return (
-      // <div style={signuppageStyle} >
-    <MDBContainer style={signuppageStyle} >
-      <MDBRow >
-        <MDBCol md="12" >
-          <form>
-            <p className="h1 text-center mb-4">Login</p>
-            <div className="grey-text">
-              <MDBInput
-                label="User Name"
-                icon="user"
-                group
-                type="text"
-                validate
-                error="wrong"
-                success="right"
-              />
-              <MDBInput
-                label="Your password"
-                icon="lock"
-                group
-                type="password"
-                validate
-              />
-            </div>
-            <div className="text-center">
-              <MDBBtn>Login</MDBBtn>
-            </div>
-          </form>
-        </MDBCol>
-      </MDBRow>
-    </MDBContainer>
-    // </div>
-  );
-};
+function Login(props)
+{
+      
+const [user, setUser] = useState({
+    email: "",
+    password: ""
+});
 
-export default FormPage;
+function handleChange(e){
+    const {name, value} = e.target
+
+    setUser((prev)=>{
+        return({
+            ...prev,
+            [name]: value
+         })
+    });
+
+    console.log(user);
+
+}
+
+const formStyle  = {
+    padding:"20px"
+}
+    return (
+        <div className = " container col-md-6 offset-md-3 mt-5">
+          <form style = {formStyle} onSubmit={(e)=>{
+            props.handleLogin(e,user)
+          }}> 
+          <h1 style={{textAlign:"center", marginBottom:"5%"}}>Login</h1>
+
+            <div className="form-group h5">
+            <label htmlFor="email">Email</label>
+            <input  
+            type= "email" 
+            name="email" 
+            className="form-control" 
+            id="email" 
+            placeholder="Enter your email" 
+            required="required"
+            value = {user.email}
+            onChange= {handleChange} />
+            </div>
+
+            <div className="form-group h5">
+            <label htmlFor="password">Password</label>
+            <input 
+            type= "password" 
+            name="password" 
+            className="form-control" 
+            id="password" 
+            placeholder="Enter your password"
+            value = {user.password} 
+            onChange= {handleChange}  />
+            </div>
+            <hr/>
+            <div className="d-flex justify-content-center">
+            <button className="btn btn-lg btn-dark  "
+             type = "submit" >login</button>
+            </div>
+           </form>  
+        </div>
+    );
+}
+export default Login;
