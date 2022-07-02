@@ -9,6 +9,7 @@ function App() {
 
 
 function handleSubmit(e,user){
+  e.preventDefault();
 axios.post(`http://localhost:5000/`,user);
 console.log(user);
 }
@@ -29,9 +30,9 @@ axios.get(`http://localhost:5000/`)
     {/* <SignUp 
       handleSubmit = {handleSubmit}
     /> */}
-     <LoginPage handleLogin= {handleLogin}/>
+     {/* <LoginPage handleLogin= {handleLogin}/> */}
     {/* <Profile /> */}
-    {/* <AddPaper /> */}
+    <AddPaper />
     </div>
   );
 }
