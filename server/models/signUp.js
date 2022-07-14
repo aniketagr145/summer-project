@@ -6,4 +6,4 @@ var signUp  = new mongoose.Schema({
     password:{type:String}
 });
 
-module.exports= mongoose.model('signUp',signUp)
+module.exports= mongoose.model('user',signUp)
