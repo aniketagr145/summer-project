@@ -119,8 +119,10 @@ app.post('/upload/document',(req,res)=>{
 
 //--------------------------><-------------------------//
 
-app.get("/getvideo", (req,res)=>{
-  res.sendFile("/media/video/testVideo.mp4");
+app.get("/getList", (req,res)=>{
+  document.find({},(err,list)=>{
+    res.send(list)
+  });
 })
 
 
