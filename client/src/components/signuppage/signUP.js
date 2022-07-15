@@ -7,7 +7,8 @@ function SignUp(props)
     const [user,setUser] = useState({
         name:"",
         email:"",
-        password:""
+        password:"",
+        number:""
     });
 
     function handleChange(e){
@@ -46,6 +47,19 @@ const formStyle  = {
             placeholder="Enter your name" 
             required="required" 
             value={user.name} 
+            onChange={handleChange}/>
+            </div>
+
+          <div className="form-group h5">
+            <label htmlFor="name">Mobile Number</label>
+            <input 
+            type= "number" 
+            name="number" 
+            className="form-control" 
+            id="number" 
+            placeholder="Enter your phone number" 
+            required="required" 
+            value={user.number} 
             onChange={handleChange}/>
             </div>
 

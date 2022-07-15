@@ -24,7 +24,7 @@ if(documentList.length==0){
 
 function handleSubmit(e,user){
   e.preventDefault();
-axios.post(`http://localhost:5000/`,user);
+axios.post(`http://localhost:5000/auth/signup`,user);
 console.log(user);
 }
 
