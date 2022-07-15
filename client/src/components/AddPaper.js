@@ -115,7 +115,7 @@ function AddPaper()
             
 
             <label htmlFor="uploadVideo">
-  <Input  id="uploadVideo" type="file" name = "uploadVideo" onChange = {handlePdfChange} hidden />
+  <Input  id="uploadVideo" type="file" name = "uploadVideo" onChange = {handleVideoChange} hidden />
   <Button  style={{"marginRight":"4px"}} variant="contained" component="span"  size="large" startIcon={<FileUploadIcon />} >
     Upload Video
   </Button>
@@ -123,7 +123,7 @@ function AddPaper()
 
 
 <label htmlFor="uploadPdf">
-  <Input  id="uploadPdf" type="file" name = "uploadPdf" onChange = {handleVideoChange} hidden/>
+  <Input  id="uploadPdf" type="file" name = "uploadPdf" onChange = {handlePdfChange} hidden/>
   <Button variant="contained" component="span"  size="large"  style={{"marginLeft":"4px"}}  startIcon={<FileUploadIcon />}>
     Upload Pdf
   </Button>
