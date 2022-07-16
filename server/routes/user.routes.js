@@ -6,11 +6,19 @@ const jwt = require('jsonwebtoken');
 // const { JWT_SECRET } = require('../config/keys');
 const usersLogin = mongoose.model('user');
 const JWT_SECRET = "lfkasnlfkdjsaui39302423eh932h9jd9j329";
+const authmalware = require('../authmiddleware')
 
-router.get('/',(req,res)=>{
-    usersLogin.find().then(result=>{
-        res.json(result)
-    }).catch(err=>console.log(err))
+router.get('/',authmalware,(req,res)=>{
+    try{
+        console.log(res.locals.user);
+        res.json(res.locals.user);
+    }catch(e){
+        console.log(e);
+        res.status(422).json({error:'Something went wrong'});
+    }
+    // usersLogin.find().then(result=>{
+    //     res.json(result)
+    // }).catch(err=>console.log(err))
 })
 
 router.put('/signup',async (req,res)=>{
