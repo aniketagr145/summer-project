@@ -25,6 +25,7 @@ module.exports = (req, res, next) => {
 					return res.status(422).json({ error: 'Try again by logging in again' });
 				}
 				console.log(1234)
+                loggeduser.password=null;
 				res.locals.user = loggeduser;
 				// console.log(res.locals.user);
 				next();

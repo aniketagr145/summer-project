@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import {Navbar, Nav, Container} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import './navbar.css';
+import { UserContext } from "../../App";
 function NavBar()
 {
+	const { state, dispatch } = useContext(UserContext);
+  // console.log(state);
     const isLoggedIn = true;
     return (
 <>
